@@ -1,0 +1,73 @@
+﻿@model MvcApplication1.StudentGrade
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>StudentGrade</legend>
+
+        <div class="editor-label">
+            @Html.Label("Course")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CourseID", "Select a Course")
+            @Html.ValidationMessage("Name")
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Year)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Year)
+            @Html.ValidationMessageFor(model => model.Year)
+        </div>
+         <div id="StudentGradesDiv">
+         
+
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", new { id = ViewBag.StudentID })
+</div>
+
+@section Scripts {
+    <script>
+        $('#CourseID').change(function () {
+            var dataVar = $("#CourseID option:selected").val();
+            $.ajax({
+                type: 'Post',
+                url: '@Url.Action("Courses", "StudentGrades")',
+                dataType: 'json',
+                data: { CourseID: dataVar },
+                success: function (data) {
+                    var items = '';
+                    $.each(data, function (i, state) {
+                        items += "<label>" + state.text + "</label><input type='text' name=" + state.value + " />"
+                    })
+                    $('#StudentGradesDiv').html(items);
+
+                }
+            });     
+        });
+
+    </script>
+
+
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

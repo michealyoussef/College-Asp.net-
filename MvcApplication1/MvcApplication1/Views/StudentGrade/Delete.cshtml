@@ -1,0 +1,30 @@
+﻿@model MvcApplication1.StudentGrade
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+        
+<h3>Are you sure you want to delete this?</h3>
+@using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    <div class="editor-label">
+            @Html.Label("Course")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CourseID", "Select a Course")
+            @Html.ValidationMessage("Name")
+        </div>
+    <p>
+        <input id="submit" type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index", new { id = ViewBag.StudentID })
+    </p>
+}
+@section Scripts {
+ 
+
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

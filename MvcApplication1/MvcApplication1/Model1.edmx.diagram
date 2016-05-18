@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5719d0eda8c84bc5a9a41622b0cc9ebb" Name="Diagram1" ZoomLevel="54">
+        <EntityTypeShape EntityType="CollegeSystemModel.AcademicStaff" Width="1.5" PointX="5.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeSystemModel.AcademicStaffRole" Width="2.75" PointX="2.875" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeSystemModel.AcademicYear" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeSystemModel.AcademicYearSection" Width="1.875" PointX="5.625" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeSystemModel.CourseGrade" Width="1.5" PointX="9.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeSystemModel.CourseMaterial" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeSystemModel.Cours" Width="1.5" PointX="7.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeSystemModel.Department" Width="2" PointX="3.125" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeSystemModel.MaterialType" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeSystemModel.Semester" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeSystemModel.StudentCours" Width="1.5" PointX="12.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeSystemModel.StudentGrade" Width="1.5" PointX="12" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollegeSystemModel.Student" Width="1.5" PointX="7.5" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="CollegeSystemModel.FK_AcademicStaff_AcademicStaffRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_AcademicStaff_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_AcademicSemester_AcademicYear" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_AcademicYearSections_AcademicYears" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_Courses_AcademicYears" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_Departments_AcademicYears" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_Students_AcademicYears" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_AcademicYearSections_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_Students_AcademicYearSections" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_CourseGrades_AcademicCourses" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_StudentGrades_CourseGrades" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_CourseMaterials_Courses" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_CourseMaterials_MaterialTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_Courses_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_Courses_Semesters" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_StudentCourses_AcademicCourses" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_Students_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_StudentCourses_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.FK_StudentGrades_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="CollegeSystemModel.AcademicStaffCourses" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MvcApplication1.StudentGrade>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { id = ViewBag.StudentID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = ViewBag.StudentID }) |
+    @Html.ActionLink("Details", "Details", new { id = ViewBag.StudentID }) |
+    @Html.ActionLink("Delete", "Delete", new { id = ViewBag.StudentID })
+</p>
+<table>
+    <tr>
+        <th>
+           @Html.DisplayName("Course")
+        </th>
+         <th>
+           @Html.DisplayName("Grade")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @{
+               
+    MvcApplication1.CollegeSystemEntities db = new MvcApplication1.CollegeSystemEntities();
+    Guid id = new Guid(item.GradeID.ToString());
+    string Grade = db.CourseGrades.Single(x => x.GradeID == id).Name;
+    Guid Courseid = db.CourseGrades.Single(x => x.GradeID == id).CourseID;
+    string CourseName = db.Courses.Single(x => x.CourseID == Courseid).Name;
+            }
+        <td>
+            @CourseName
+        </td>
+        <td>
+            @Grade
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mark)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+    
+    </tr>
+}
+
+</table>

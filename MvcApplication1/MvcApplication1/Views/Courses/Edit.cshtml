@@ -1,0 +1,68 @@
+﻿@model MvcApplication1.Cours
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cours</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CourseID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CourseID)
+            @Html.ValidationMessageFor(model => model.CourseID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SemesterID, "Semester")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("SemesterID", String.Empty)
+            @Html.ValidationMessageFor(model => model.SemesterID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DepartmentID, "Department")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DepartmentID", String.Empty)
+            @Html.ValidationMessageFor(model => model.DepartmentID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AcademicYearID, "AcademicYear")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("AcademicYearID", String.Empty)
+            @Html.ValidationMessageFor(model => model.AcademicYearID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

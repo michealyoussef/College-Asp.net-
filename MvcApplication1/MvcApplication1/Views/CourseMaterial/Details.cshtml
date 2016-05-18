@@ -1,0 +1,50 @@
+﻿@model MvcApplication1.CourseMaterial
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>CourseMaterial</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaterialID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaterialID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cours.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cours.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaterialType.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaterialType.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FilePath)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FilePath)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaterialID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
